@@ -1,0 +1,215 @@
+/**/
+
+html {
+    box-sizing: border-box;
+    /*Para que el degradado quede fijo en todo el sitio*/
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+/**/
+
+body {
+    /*cambiar la fuente*/
+    font-family: Arial, Helvetica, sans-serif;
+    /*Color de las fuentes*/
+    color: white;
+    /*Para que el degradado quede fijo en todo el sitio*/
+    height: 100%;
+    /*APLICACION UN DEGRADADO DE COLOR DESDE LA PAGINA COLORZILLA*/
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e570e7+0,c85ec7+47,c85ec7+49,a849a3+100 */
+    background: #e570e7;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #e570e7 0%, #c85ec7 47%, #c85ec7 49%, #a849a3 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #e570e7 0%, #c85ec7 47%, #c85ec7 49%, #a849a3 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #e570e7 0%, #c85ec7 47%, #c85ec7 49%, #a849a3 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e570e7', endColorstr='#a849a3', GradientType=0);
+    /* IE6-9 */
+    /*Para dejar fijo el degradado*/
+    background-attachment: fixed;
+}
+
+
+/*SECCION 1 ENCABEZADO*/
+
+header {
+    /*Centrar el texto o imagen*/
+    text-align: center;
+    /*Espacio en los 4 lados del sitio
+    arriba y abajo 40px 
+    izquierda y derecha 0*/
+    padding: 40px 0;
+}
+
+
+/*IMAGEN PRINCIPAL RESPONSIVA*/
+
+img {
+    /*Anchura maxima*/
+    max-width: 100%;
+}
+
+
+/*Contenedor*/
+
+.contenedor {
+    /* Ancho maximo*/
+    max-width: 1200px;
+    /*margen en los 4 lados
+    0: izquierda y derecha
+    auto: arriba y abajo*/
+    margin: 0 auto;
+}
+
+
+/*SECCION 2 IMAGEN PRINCIPAL*/
+
+
+/*Margen abajo*/
+
+.hero {
+    /*Margen abajo*/
+    margin-bottom: 40px;
+}
+
+
+/*SECCION 3 NUESTROS PRODUCTOS*/
+
+h2 {
+    /*Centrar el texto*/
+    text-align: center;
+    /*Convertir texto a mayuscula*/
+    text-transform: uppercase;
+}
+
+
+/*Margen arriba*/
+
+.lista-productos {
+    /*Para que remueda el padding y este alineado los productos con la imagen principal*/
+    padding: 0;
+    /*Quitar las viñetas de la lista*/
+    list-style: none;
+}
+
+
+/*Para que no se desfase las imagene de los producto
+2n+1 significa */
+
+.lista-productos li:nth-child(2n+1) {
+    clear: both
+}
+
+
+/**/
+
+.lista-productos li {
+    /*Coloca los productos en 3 columnas uno a la par de otro*/
+    float: left;
+    /*anchura solo deja dos columnas o dos productos uno a la par de otro*/
+    width: 50%;
+    /*Separacion entre productos*/
+    padding: 20px;
+    /*Centrar el texto de cada producto*/
+    text-align: center;
+}
+
+
+/*ESTILOS AL TEXTO DE CADA PRODUCTO*/
+
+.lista-productos li p {
+    /*Texto en negrita*/
+    font-weight: bold;
+    /*Tamaño del texto*/
+    font-size: 20px;
+    /*Margen o separacion entre la imagen del producto y el nombre del producto*/
+    margin: 10px 0 0 0;
+}
+
+
+/*ESTILOS AL PRECIO DE CADA PRODUCTO*/
+
+.lista-productos li p span {
+    /*color del precio*/
+    color: #FFCE00;
+    /*Tamaño del precio*/
+    font-size: 25px;
+}
+
+
+/*ESTILOS AL BOTON COMPRAR*/
+
+.boton {
+    /*Color de fondo*/
+    background-color: #FFCE00;
+    /*Espacio alrededor del contenido*/
+    padding: 10px 40px;
+    /*Margen entre el nombre del producto el precio y el boton*/
+    margin-top: 10px;
+    /*Se aplica display: inline-block
+    para que aplique el margen abajo ya que todos los enlaces 
+    son display:inline y asi no se puede poner ningun margen ni un ancho*/
+    display: inline-block;
+    /*color del texto comprar*/
+    color: #8001c3;
+    /*Convertirlo a mayuscula*/
+    text-transform: uppercase;
+    /*Colocar el texto en negrita*/
+    font-weight: bold;
+    /*Tamaño del texto comprar*/
+    font-size: 18px;
+    /*Quitar la linea de abajo del texto*/
+    text-decoration: none;
+    /*Para que la transicion se aun poco mas lenta o se vea mejor*/
+    transition: backoground-color .3s ease-in-out;
+}
+
+
+/*TRANSICION AL BOTON OSEA QUE CAMBIE DE COLOR AL MOMENTO DE COLOCAR EL CURSOR*/
+
+.boton:hover {
+    background-color: #ebbc00;
+}
+
+
+/**/
+
+@media (min-width: 768px) {
+    .lista-productos li {
+        /*anchura solo deja dos columnas o dos productos uno a la par de otro*/
+        width: 33.3%;
+    }
+    .lista-productos li:nth-child(2n+1) {
+        clear: unset
+    }
+    .lista-productos li:nth-child(3n+1) {
+        clear: both
+    }
+}
+
+
+/*Colocar un borde a cada producto*/
+
+.lista-productos li img {
+    /*rgba(128,1,195, .45): el .45 sera la transparencia que se le coloca al border */
+    border: 10px solid rgba(128, 1, 195, .45);
+    /*Aplicarle transicion  */
+    transition: border-color .3s ease-in-out;
+}
+
+
+/*Cuando el cursor esta encima del producto cambia la apariencia*/
+
+.lista-productos li img:hover {
+    /*rgba(128,1,195, .45): el 1 sera la transparencia que se le coloca al border */
+    border: 10px solid rgba(128, 1, 195, 1);
+}
